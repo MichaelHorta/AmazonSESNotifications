@@ -43,7 +43,7 @@ namespace SNSNotificationForAmazonSESTests
         /// <returns></returns>
         public static Stream RetrieveEmbeddedResourceAsStream(string resourceName)
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Format("{0}.{1}", "SNSNotificationForAmazonSESTests.Resources", "delivery-notification-content.json"));
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Format("{0}.{1}", "SNSNotificationForAmazonSESTests.Resources", resourceName));
         }
     }
 }
