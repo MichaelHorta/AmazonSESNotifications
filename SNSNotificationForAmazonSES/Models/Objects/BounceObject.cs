@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace SNSNotificationForAmazonSES.Models.Objects
+namespace NotificationForAmazonSES.Models.Objects
 {
     public class BounceObject
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SNSNotificationForAmazonSES.Models.Objects
+namespace NotificationForAmazonSES.Models.Objects
 {
     public class ComplaintObject
     {

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using NotificationForAmazonSES.Models;
 using NUnit.Framework;
-using SNSNotificationForAmazonSES.Models;
 
-namespace SNSNotificationForAmazonSESTests
+namespace NotificationForAmazonSESTests
 {
     public class ComplaintNotificationTest
     {
