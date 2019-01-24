@@ -7,7 +7,7 @@ namespace SNSNotificationForAmazonSESTests
     public class ComplaintNotificationTest
     {
         [Test(Description = "Should serialize a complaint notification (formatted as JSON) in an object")]
-        public void SerializeBounceNotification()
+        public void SerializeComplaintNotification()
         {
             AmazonSESComplaintNotification complaintNotification = null;
             var resource = ResourceManager.RetrieveEmbeddedResource("complaint-notification-content.json");
