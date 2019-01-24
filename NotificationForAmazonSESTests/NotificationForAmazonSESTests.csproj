@@ -71,7 +71,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SNSNotificationForAmazonSES\NotificationForAmazonSES.csproj">
+    <ProjectReference Include="..\NotificationForAmazonSES\NotificationForAmazonSES.csproj">
       <Project>{96eaae6c-a277-4fc1-95b6-09a36aad9004}</Project>
       <Name>NotificationForAmazonSES</Name>
     </ProjectReference>
