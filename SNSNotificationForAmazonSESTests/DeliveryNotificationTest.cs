@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-using SNSNotificationForAmazonSES.Models;
+﻿using NotificationForAmazonSES.Models;
+using NUnit.Framework;
 
-namespace SNSNotificationForAmazonSESTests
+namespace NotificationForAmazonSESTests
 {
     [TestFixture]
     public class DeliveryNotificationTest
