@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using NotificationForAmazonSES.Models.Objects;
+using AmazonSESNotifications.Models.Objects;
 
-namespace NotificationForAmazonSES.Models
+namespace AmazonSESNotifications.Models
 {
     public class AmazonSESBounceNotification : AmazonSESNotification
     {

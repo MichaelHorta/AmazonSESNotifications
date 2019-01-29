@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace NotificationForAmazonSES.Models.Objects
+namespace AmazonSESNotifications.Models.Objects
 {
     public class MailObject
     {
