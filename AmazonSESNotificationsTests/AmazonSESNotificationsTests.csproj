@@ -71,9 +71,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NotificationForAmazonSES\NotificationForAmazonSES.csproj">
+    <ProjectReference Include="..\AmazonSESNotifications\AmazonSESNotifications.csproj">
       <Project>{96eaae6c-a277-4fc1-95b6-09a36aad9004}</Project>
-      <Name>NotificationForAmazonSES</Name>
+      <Name>AmazonSESNotifications</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

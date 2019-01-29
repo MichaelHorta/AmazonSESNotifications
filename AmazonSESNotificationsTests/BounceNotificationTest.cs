@@ -1,7 +1,7 @@
-﻿using NotificationForAmazonSES.Models;
+﻿using AmazonSESNotifications.Models;
 using NUnit.Framework;
 
-namespace NotificationForAmazonSESTests
+namespace AmazonSESNotificationsTests
 {
     [TestFixture]
     public class BounceNotificationTest
