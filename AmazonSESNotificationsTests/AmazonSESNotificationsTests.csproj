@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmazonSESNotificationTest.cs" />
     <Compile Include="BounceNotificationTest.cs" />
     <Compile Include="ComplaintNotificationTest.cs" />
     <Compile Include="DeliveryNotificationTest.cs" />
