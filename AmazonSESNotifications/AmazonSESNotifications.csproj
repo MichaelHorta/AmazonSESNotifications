@@ -8,7 +8,7 @@
     <Company />
     <Description>SNS Notifications For Amazon SES</Description>
     <PackageProjectUrl>https://github.com/MichaelHorta/AmazonSESNotifications</PackageProjectUrl>
-    <PackageTags>Amazon SNS SES Notifications</PackageTags>
+    <PackageTags>Amazon SES SNS Notifications</PackageTags>
     <Copyright>Copyright © 2019 Michael Horta Fleitas</Copyright>
     <PackageLicenseUrl>https://github.com/MichaelHorta/AmazonSESNotifications/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
