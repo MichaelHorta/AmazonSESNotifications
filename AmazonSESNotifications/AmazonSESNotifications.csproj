@@ -3,12 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>SNSNotificationForAmazonSES</PackageId>
+    <PackageId>AmazonSESNotifications</PackageId>
     <Authors>Michael Horta Fleitas</Authors>
     <Company />
     <Description>SNS Notifications For Amazon SES</Description>
-    <PackageProjectUrl>https://github.com/MichaelHorta/SNSNotificationForAmazonSES</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/MichaelHorta/AmazonSESNotifications</PackageProjectUrl>
     <PackageTags>Amazon SNS SES Notifications</PackageTags>
+    <Copyright>Copyright © 2019 Michael Horta Fleitas</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
