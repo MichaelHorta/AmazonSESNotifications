@@ -20,24 +20,7 @@ namespace AmazonSESNotifications.Models
         public static AmazonSESNotification Parse(string notification)
         {
             AmazonSESNotification amazonSESNotification = null;
-            var settings = new JsonSerializerSettings { MissingMemberHandling = MissingMemberHandling.Error };
-            var subTypes = Util.AmazonSESNotificationsSubTypes();
-            foreach(var type in subTypes)
-            {
-                try
-                {
-                    amazonSESNotification = JsonConvert.DeserializeObject(notification, type, settings) as AmazonSESNotification;
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    if (ex is JsonSerializationException)
-                    {
-                        continue;
-                    }
-                }
-            }
-
+            TryParse(notification, out amazonSESNotification);
             return amazonSESNotification;
         }
 
