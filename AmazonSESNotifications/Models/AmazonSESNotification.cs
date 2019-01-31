@@ -19,12 +19,12 @@ namespace AmazonSESNotifications.Models
 
         public static AmazonSESNotification Parse(string notification)
         {
-            return ParseTool.ParseAmazonSESNotification(notification, false);
+            return ParseTool.ParseAmazonSESNotification(notification);
         }
 
         public static bool TryParse(string notification, out AmazonSESNotification amazonSESNotification)
         {
-            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification, false);
+            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification);
         }
     }
 }

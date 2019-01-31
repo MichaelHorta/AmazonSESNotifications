@@ -27,12 +27,12 @@ namespace AmazonSESNotifications.Models
 
         public new static AmazonSESBounceNotification Parse(string notification)
         {
-            return (AmazonSESBounceNotification)ParseTool.ParseAmazonSESNotification(notification, true, typeof(AmazonSESBounceNotification));
+            return (AmazonSESBounceNotification)ParseTool.ParseAmazonSESNotification(notification, typeof(AmazonSESBounceNotification));
         }
 
         public new static bool TryParse(string notification, out AmazonSESNotification amazonSESNotification)
         {
-            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification, true, typeof(AmazonSESBounceNotification));
+            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification, typeof(AmazonSESBounceNotification));
         }
     }
 }
