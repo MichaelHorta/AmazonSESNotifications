@@ -7,5 +7,32 @@ namespace AmazonSESNotifications.Models
     {
         [JsonProperty("bounce")]
         public BounceObject Bounce { get; set; }
+
+        public AmazonSESBounceNotification()
+        {
+
+        }
+
+        public AmazonSESBounceNotification(string notification)
+        {
+            AmazonSESNotification amazonSESNotification = null;
+            if (TryParse(notification, out amazonSESNotification))
+            {
+                var amazonSESBounceNotification = amazonSESNotification as AmazonSESBounceNotification;
+                Mail = amazonSESBounceNotification.Mail;
+                NotificationType = amazonSESBounceNotification.NotificationType;
+                Bounce = amazonSESBounceNotification.Bounce;
+            }
+        }
+
+        public new static AmazonSESBounceNotification Parse(string notification)
+        {
+            return (AmazonSESBounceNotification)ParseTool.ParseAmazonSESNotification(notification, typeof(AmazonSESBounceNotification));
+        }
+
+        public new static bool TryParse(string notification, out AmazonSESNotification amazonSESNotification)
+        {
+            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification, typeof(AmazonSESBounceNotification));
+        }
     }
 }
