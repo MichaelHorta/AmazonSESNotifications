@@ -9,14 +9,19 @@ namespace AmazonSESNotificationsTests
         [Test(Description = "Should serialize a bounce notification (formatted as JSON) in an object")]
         public void SerializeBounceNotification()
         {
-            AmazonSESBounceNotification bounceNotification = null;
+            AmazonSESBounceNotification amazonSESBounceNotification = null;
             var notification = ResourceManager.RetrieveEmbeddedResource("bounce-notification-content.json");
             if (null != notification)
             {
-                bounceNotification = new AmazonSESBounceNotification(notification);
+                AmazonSESBounceNotification.Parse(notification);
+                amazonSESBounceNotification = new AmazonSESBounceNotification(notification);
             }
 
-            Assert.IsTrue(null != bounceNotification);
+            AmazonSESNotification amazonSESNotification = null;
+            bool parsed = AmazonSESBounceNotification.TryParse(notification, out amazonSESNotification);
+            AmazonSESBounceNotification amazonSESBounceNotification2 = amazonSESNotification as AmazonSESBounceNotification;
+
+            Assert.IsTrue(null != amazonSESBounceNotification);
         }
     }
 }

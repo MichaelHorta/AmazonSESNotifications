@@ -8,14 +8,14 @@ namespace AmazonSESNotificationsTests
         [Test(Description = "Should serialize a complaint notification (formatted as JSON) in an object")]
         public void SerializeComplaintNotification()
         {
-            AmazonSESComplaintNotification complaintNotification = null;
+            AmazonSESComplaintNotification amazonSESComplaintNotification = null;
             var notification = ResourceManager.RetrieveEmbeddedResource("complaint-notification-content.json");
             if (null != notification)
             {
-                complaintNotification = new AmazonSESComplaintNotification(notification);
+                amazonSESComplaintNotification = new AmazonSESComplaintNotification(notification);
             }
 
-            Assert.IsTrue(null != complaintNotification);
+            Assert.IsTrue(null != amazonSESComplaintNotification);
         }
     }
 }

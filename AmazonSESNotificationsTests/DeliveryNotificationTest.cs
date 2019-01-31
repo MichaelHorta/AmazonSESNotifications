@@ -9,14 +9,14 @@ namespace AmazonSESNotificationsTests
         [Test(Description = "Should serialize a delivery notification (formatted as JSON) in an object")]
         public void SerializeDeliveryNotification()
         {
-            AmazonSESDeliveryNotification deliveryNotification = null;
+            AmazonSESDeliveryNotification amazonSESDeliveryNotification = null;
             var notification = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
             if (null != notification)
             {
-                deliveryNotification = new AmazonSESDeliveryNotification(notification);
+                amazonSESDeliveryNotification = new AmazonSESDeliveryNotification(notification);
             }
 
-            Assert.IsTrue(null != deliveryNotification);
+            Assert.IsTrue(null != amazonSESDeliveryNotification);
         }
     }
 }
