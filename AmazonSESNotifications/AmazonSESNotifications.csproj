@@ -6,11 +6,13 @@
     <PackageId>AmazonSESNotifications</PackageId>
     <Authors>Michael Horta Fleitas</Authors>
     <Company />
-    <Description>SNS Notifications For Amazon SES</Description>
+    <Description>Models for representing Amazon SNS Notification for Amazon SES</Description>
     <PackageProjectUrl>https://github.com/MichaelHorta/AmazonSESNotifications</PackageProjectUrl>
     <PackageTags>Amazon SES SNS Notifications</PackageTags>
     <Copyright>Copyright © 2019 Michael Horta Fleitas</Copyright>
     <PackageLicenseUrl>https://github.com/MichaelHorta/AmazonSESNotifications/blob/master/LICENSE</PackageLicenseUrl>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Provided Parse and TryParse methods for derived notification classes. Provided ParseTool class</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
