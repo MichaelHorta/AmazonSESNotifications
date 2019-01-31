@@ -16,12 +16,12 @@ namespace SNSNotificationForAmazonSESTests
         public void TryParseDeliveryNotification()
         {
             AmazonSESNotification amazonSESNotification = null;
-            var resource = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
+            var notification = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
 
             var parsed = false;
-            if (null != resource)
+            if (null != notification)
             {
-                parsed = AmazonSESNotification.TryParse(resource, out amazonSESNotification);
+                parsed = AmazonSESNotification.TryParse(notification, out amazonSESNotification);
             }
 
             Assert.IsTrue(parsed);
@@ -31,11 +31,11 @@ namespace SNSNotificationForAmazonSESTests
         public void ParseDeliveryNotification()
         {
             AmazonSESNotification amazonSESNotification = null;
-            var resource = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
+            var notification = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
             
-            if (null != resource)
+            if (null != notification)
             {
-                amazonSESNotification = AmazonSESNotification.Parse(resource);
+                amazonSESNotification = AmazonSESNotification.Parse(notification);
             }
 
             Assert.IsTrue(null != amazonSESNotification);
