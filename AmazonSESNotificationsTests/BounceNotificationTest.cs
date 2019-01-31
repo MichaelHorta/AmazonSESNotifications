@@ -10,10 +10,10 @@ namespace AmazonSESNotificationsTests
         public void SerializeBounceNotification()
         {
             AmazonSESBounceNotification bounceNotification = null;
-            var resource = ResourceManager.RetrieveEmbeddedResource("bounce-notification-content.json");
-            if (null != resource)
+            var notification = ResourceManager.RetrieveEmbeddedResource("bounce-notification-content.json");
+            if (null != notification)
             {
-                bounceNotification = Newtonsoft.Json.JsonConvert.DeserializeObject<AmazonSESBounceNotification>(resource);
+                bounceNotification = new AmazonSESBounceNotification(notification);
             }
 
             Assert.IsTrue(null != bounceNotification);

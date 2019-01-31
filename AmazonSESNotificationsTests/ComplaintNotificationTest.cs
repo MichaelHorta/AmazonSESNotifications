@@ -9,10 +9,10 @@ namespace AmazonSESNotificationsTests
         public void SerializeComplaintNotification()
         {
             AmazonSESComplaintNotification complaintNotification = null;
-            var resource = ResourceManager.RetrieveEmbeddedResource("complaint-notification-content.json");
-            if (null != resource)
+            var notification = ResourceManager.RetrieveEmbeddedResource("complaint-notification-content.json");
+            if (null != notification)
             {
-                complaintNotification = Newtonsoft.Json.JsonConvert.DeserializeObject<AmazonSESComplaintNotification>(resource);
+                complaintNotification = new AmazonSESComplaintNotification(notification);
             }
 
             Assert.IsTrue(null != complaintNotification);

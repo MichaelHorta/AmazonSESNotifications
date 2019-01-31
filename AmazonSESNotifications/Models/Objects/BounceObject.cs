@@ -15,11 +15,17 @@ namespace AmazonSESNotifications.Models.Objects
         [JsonProperty("bouncedRecipients")]
         public List<BouncedRecipient> BouncedRecipients { get; set; }
 
+        [JsonProperty("reportingMTA")]
+        public string ReportingMTA { get; set; }
+
         [JsonProperty("timestamp")]
         public DateTime Timestamp { get; set; }
 
         [JsonProperty("feedbackId")]
         public string FeedbackId { get; set; }
+
+        [JsonProperty("remoteMtaIp")]
+        public string RemoteMtaIp { get; set; }
     }
 
     public class BouncedRecipient

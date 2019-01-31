@@ -10,10 +10,10 @@ namespace AmazonSESNotificationsTests
         public void SerializeDeliveryNotification()
         {
             AmazonSESDeliveryNotification deliveryNotification = null;
-            var resource = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
-            if (null != resource)
+            var notification = ResourceManager.RetrieveEmbeddedResource("delivery-notification-content.json");
+            if (null != notification)
             {
-                deliveryNotification = Newtonsoft.Json.JsonConvert.DeserializeObject<AmazonSESDeliveryNotification>(resource);
+                deliveryNotification = new AmazonSESDeliveryNotification(notification);
             }
 
             Assert.IsTrue(null != deliveryNotification);

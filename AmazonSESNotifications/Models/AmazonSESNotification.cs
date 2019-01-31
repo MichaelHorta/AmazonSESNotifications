@@ -19,35 +19,12 @@ namespace AmazonSESNotifications.Models
 
         public static AmazonSESNotification Parse(string notification)
         {
-            AmazonSESNotification amazonSESNotification = null;
-            TryParse(notification, out amazonSESNotification);
-            return amazonSESNotification;
+            return ParseTool.ParseAmazonSESNotification(notification);
         }
 
         public static bool TryParse(string notification, out AmazonSESNotification amazonSESNotification)
         {
-            amazonSESNotification = null;
-            var settings = new JsonSerializerSettings { MissingMemberHandling = MissingMemberHandling.Error };
-            var subTypes = Util.AmazonSESNotificationsSubTypes();
-            bool parsed = false;
-            foreach (var type in subTypes)
-            {
-                try
-                {
-                    amazonSESNotification = JsonConvert.DeserializeObject(notification, type, settings) as AmazonSESNotification;
-                    parsed = true;
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    if (ex is JsonSerializationException)
-                    {
-                        continue;
-                    }
-                }
-            }
-
-            return parsed;
+            return ParseTool.TryParseAmazonSESNotification(notification, out amazonSESNotification);
         }
     }
 }
