@@ -7,9 +7,8 @@ Nuget
 -----
 You can find nuget package with name ```AmazonSESNotifications```
 
-Example
+Example of content for ```notification``` variable
 -------
-### Content of ```notification``` variable
 
 Obtained from <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notification-contents.html">Developer Guide of Amazon Simple Email Service</a>
 
@@ -81,16 +80,57 @@ Obtained from <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/not
   }
 }
 ```
+Examples
+-------
 
-### Parsing notification
+### Parsing ```unidentified``` notification
 ```C#
-AmazonSESDeliveryNotification amazonSESDeliveryNotification = (AmazonSESDeliveryNotification) AmazonSESNotification.Parse(notification);
+AmazonSESNotification amazonSESNotification = AmazonSESNotification.Parse(notification);
 ```
 
-### Trying to parse notification
+### Trying to parse ```unidentified``` notification
 ```C#
 AmazonSESNotification amazonSESNotification = null;
-var parsed = AmazonSESNotification.TryParse(notification, out amazonSESNotification);
+bool parsed = AmazonSESNotification.TryParse(notification, out amazonSESNotification);
+```
+
+### Working with```AmazonSESBounceNotification``` notification
+```C#
+AmazonSESBounceNotification amazonSESBounceNotification = new AmazonSESBounceNotification(notification);
+```
+```C#
+AmazonSESBounceNotification amazonSESBounceNotification = AmazonSESBounceNotification.Parse(notification);
+```
+```C#
+AmazonSESNotification amazonSESNotification = null;
+bool parsed = AmazonSESBounceNotification.TryParse(notification, out amazonSESNotification);
+AmazonSESBounceNotification amazonSESBounceNotification = amazonSESNotification as AmazonSESBounceNotification;
+```
+
+### Working with```AmazonSESComplaintNotification``` notification
+```C#
+AmazonSESComplaintNotification amazonSESComplaintNotification = new AmazonSESComplaintNotification(notification);
+```
+```C#
+AmazonSESComplaintNotification amazonSESComplaintNotification = AmazonSESComplaintNotification.Parse(notification);
+```
+```C#
+AmazonSESNotification amazonSESNotification = null;
+bool parsed = AmazonSESComplaintNotification.TryParse(notification, out amazonSESNotification);
+AmazonSESComplaintNotification amazonSESComplaintNotification = amazonSESNotification as AmazonSESComplaintNotification;
+```
+
+### Working with```AmazonSESDeliveryNotification``` notification
+```C#
+AmazonSESDeliveryNotification amazonSESDeliveryNotification = new AmazonSESDeliveryNotification(notification);
+```
+```C#
+AmazonSESDeliveryNotification amazonSESDeliveryNotification = AmazonSESDeliveryNotification.Parse(notification);
+```
+```C#
+AmazonSESNotification amazonSESNotification = null;
+bool parsed = AmazonSESDeliveryNotification.TryParse(notification, out amazonSESNotification);
+AmazonSESDeliveryNotification amazonSESDeliveryNotification = amazonSESNotification as AmazonSESDeliveryNotification;
 ```
 
 Unit tests
