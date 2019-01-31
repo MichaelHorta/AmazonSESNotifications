@@ -9,10 +9,10 @@ namespace AmazonSESNotifications
 {
     public static class ParseTool
     {
-        public static bool TryParseAmazonSESNotification(string notification, out AmazonSESNotification amazonSESNotification, Type type = null)
+        public static bool TryParseAmazonSESNotification(string notification, out AmazonSESNotification amazonSESNotification, bool ignoreMissingMember = true, Type type = null)
         {
             amazonSESNotification = null;
-            var settings = new JsonSerializerSettings { MissingMemberHandling = MissingMemberHandling.Error };
+            var settings = GetJsonSerializerSettings(ignoreMissingMember);
 
             #region Deserializing for a specific type 
             if (null != type)
@@ -51,10 +51,10 @@ namespace AmazonSESNotifications
             return parsed;
         }
 
-        public static AmazonSESNotification ParseAmazonSESNotification(string notification, Type type = null)
+        public static AmazonSESNotification ParseAmazonSESNotification(string notification, bool ignoreMissingMember = true, Type type = null)
         {
             AmazonSESNotification amazonSESNotification = null;
-            TryParseAmazonSESNotification(notification, out amazonSESNotification, type);
+            TryParseAmazonSESNotification(notification, out amazonSESNotification, ignoreMissingMember, type);
             return amazonSESNotification;
         }
 
@@ -73,6 +73,11 @@ namespace AmazonSESNotifications
             }
 
             return list;
+        }
+
+        private static JsonSerializerSettings GetJsonSerializerSettings(bool ignoreMissingMember)
+        {
+            return ignoreMissingMember ? new JsonSerializerSettings { MissingMemberHandling = MissingMemberHandling.Ignore } : new JsonSerializerSettings { MissingMemberHandling = MissingMemberHandling.Error };
         }
     }
 }
