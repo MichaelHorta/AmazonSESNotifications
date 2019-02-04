@@ -9,6 +9,13 @@ namespace AmazonSESNotifications
 {
     public static class ParseTool
     {
+        private static List<Type> amazonSESNotificationSubTypes = new List<Type>()
+        {
+            typeof(AmazonSESBounceNotification),
+            typeof(AmazonSESComplaintNotification),
+            typeof(AmazonSESDeliveryNotification)
+        };
+
         public static bool TryParseAmazonSESNotification(string notification, out AmazonSESNotification amazonSESNotification, Type type = null)
         {
             amazonSESNotification = null;
@@ -28,10 +35,9 @@ namespace AmazonSESNotifications
                 }
             }
             #endregion
-
-            var subTypes = AmazonSESNotificationsSubTypes();
+            
             bool parsed = false;
-            foreach (var t in subTypes)
+            foreach (var t in amazonSESNotificationSubTypes)
             {
                 try
                 {
@@ -56,23 +62,6 @@ namespace AmazonSESNotifications
             AmazonSESNotification amazonSESNotification = null;
             TryParseAmazonSESNotification(notification, out amazonSESNotification, type);
             return amazonSESNotification;
-        }
-
-        private static IList<Type> AmazonSESNotificationsSubTypes()
-        {
-            Assembly asm = typeof(AmazonSESNotification).GetTypeInfo().Assembly;
-            var enumerator = asm.DefinedTypes.GetEnumerator();
-            var list = new List<Type>();
-            while (enumerator.MoveNext())
-            {
-                TypeInfo typeInfo = enumerator.Current;
-                if (typeInfo.BaseType.Name.Equals(typeof(AmazonSESNotification).Name))
-                {
-                    list.Add(typeInfo.AsType());
-                }
-            }
-
-            return list;
         }
     }
 }
