@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFrameworks>netstandard1.0;net40</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>AmazonSESNotifications</PackageId>
     <Authors>Michael Horta Fleitas</Authors>
@@ -11,12 +11,16 @@
     <PackageTags>Amazon SES SNS Notifications</PackageTags>
     <Copyright>Copyright © 2019 Michael Horta Fleitas</Copyright>
     <PackageLicenseUrl>https://github.com/MichaelHorta/AmazonSESNotifications/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageReleaseNotes>Provided Parse and TryParse methods for derived notification classes. Provided ParseTool class</PackageReleaseNotes>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.0'">
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net40'">
+    <PackageReference Include="Newtonsoft.Json" Version="7.0.1" />
   </ItemGroup>
 
 </Project>
